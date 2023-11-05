@@ -4,10 +4,10 @@ const Navbar = () => {
     const navLink = <>
         <li><Link to='/' className="text-[#DDDDDD] mr-2">Home</Link></li>
         <li><Link to='/all_jobs' className="text-[#DDDDDD] mr-2">All Jobs</Link></li>
-        <li><Link to='/blog' className="text-[#DDDDDD] mr-2">Blog</Link></li>
+        <li><Link to='/blogs' className="text-[#DDDDDD] mr-2">Blogs</Link></li>
     </>
     return (
-        <div className="navbar bg-[#007B7F] dark:bg-[#191970]">
+        <div className="navbar bg-[#007B7F] dark:bg-[#191970] sticky top-0 z-20 shadow-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,7 +27,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <Link to='/login' className="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-2 px-4 rounded-br-full rounded-tl-full transition duration-300 ease-in-out hover:scale-x-105">
+                    Login
+                </Link>
             </div>
         </div>
     );
