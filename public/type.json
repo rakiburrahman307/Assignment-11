@@ -1,18 +1,18 @@
 [
     {
         "id": 1,
-        "type": "On Site Job"
+        "type": "OnSiteJobs"
     },
     {
         "id": 2,
-        "type": "Remote Job"
+        "type": "RemoteJobs"
     },
     {
         "id": 3,
-        "type": "Hybrid"
+        "type": "Hybrids"
     },
     {
         "id": 4,
-        "type": "Part Time"
+        "type": "PartTimes"
     }
 ]
