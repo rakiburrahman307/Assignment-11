@@ -1,37 +1,53 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvidors/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import TostMessage from "../Pages/TostMessage/TostMassage";
 
 const Login = () => {
-    const { logInWithGoogle } = useContext(AuthContext);
-
+    const { logInWithGoogle, logInWithEmailAndPassword} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleLogin = (e) => {
         e.preventDefault();
 
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+
+        logInWithEmailAndPassword(email, password)
+        .then(() => {
+            // Signed in 
+                TostMessage('Sign in successful');
+                navigate(location?.state ? location.state : '/');
+            
+            // ...
+          })
+          .catch((error) => {
+            TostMessage(error.message);
+          });
     }
 
-    //  LogIn With Google 
+
     const handleLogInWithGoogle = () => {
         logInWithGoogle()
-            .then((result) => {
-                console.log(result.user);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
-    }
+          .then(() => {
+            toast.success('Sign in successful');
+              navigate(location?.state ? location.state : '/');
+           
+          })
+          .catch((err) => {
+            toast.error(err.message); 
+          });
+      };
     return (
 
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Login - JobSwift</title>
+                <title>Login | JobSwift</title>
             </Helmet>
             <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/4ZSM0P3/pexels-tirachard-kumtanom-733852.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
@@ -66,6 +82,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

@@ -1,0 +1,75 @@
+{
+    "onSiteJobs": [
+      {
+        "name": "Enosis Solutions",
+        "jobTitle": "Software Engineer",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$80,000 - $100,000",
+        "applicantsNumber": 50
+      },
+      {
+        "name": "DataSoft",
+        "jobTitle": "Marketing Specialist",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$60,000 - $80,000",
+        "applicantsNumber": 30
+      }
+    ],
+    "remoteJobs": [
+      {
+        "name": "Brain Station 23 Limited",
+        "jobTitle": "Data Analyst",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$70,000 - $90,000",
+        "applicantsNumber": 40
+      },
+      {
+        "name": "Workspace Info tech Ltd",
+        "jobTitle": "Graphic Designer",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$50,000 - $70,000",
+        "applicantsNumber": 25
+      }
+    ],
+    "hybridJobs": [
+      {
+        "name": "Tiger IT Bangladesh Limited",
+        "jobTitle": "Product Manager",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$90,000 - $110,000",
+        "applicantsNumber": 60
+      },
+      {
+        "name": "Daffodil Software Ltd.",
+        "jobTitle": "Customer Support Specialist",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$40,000 - $60,000",
+        "applicantsNumber": 20
+      }
+    ],
+    "partTimeJobs": [
+      {
+        "name": "Dream71 Bangladesh",
+        "jobTitle": "Content Writer",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$30,000 - $40,000",
+        "applicantsNumber": 15
+      },
+      {
+        "name": "Dream71 Bangladesh",
+        "jobTitle": "Social Media Coordinator",
+        "postingDate": "2023-11-05",
+        "applicationDeadline": "2023-12-05",
+        "salaryRange": "$25,000 - $35,000",
+        "applicantsNumber": 10
+      }
+    ]
+  }
+  

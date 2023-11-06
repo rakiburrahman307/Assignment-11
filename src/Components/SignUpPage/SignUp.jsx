@@ -1,7 +1,58 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvidors/AuthProvider";
+import { toast } from "react-toastify";
+import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
+
+    const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const name =form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photoUrl = form.photoUrl.value;
+
+        console.log(name, email, password, photoUrl);
+        if (/^\w{1,5}$/.test(password)) {
+            toast.error("Password must be 6 characters");
+        } else if (/^[^A-Z]*$/.test(password)) {
+            toast.error("Password must one capital letter")
+        } else if (/^[^\W_]*$/.test(password)) {
+            toast.error('Must have a special character')
+        } else {
+            createUser(email, password, name)
+                .then(result => {
+                    // update profile name :
+                    updateProfile(result.user, {
+                        displayName: name,
+                        photoURL:photoUrl
+                    })
+                        .then(() => {
+                            toast.success("Create user successfully")
+                            navigate("/")
+
+                        })
+                        .catch(err => {
+                            toast.error(err.massage)
+                        })
+                })
+                .catch(err => {
+                    toast.error(err.massage);
+                });
+
+
+        }
+        
+    }
+
+
     return (
         <div>
             <Helmet>
@@ -12,7 +63,7 @@ const SignUp = () => {
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="card flex-shrink-0 mt-10 w-full max-w-sm shadow-2xl bg-base-300">
                     <h1 className="text-3xl font-bold text-center mt-4">Login now!</h1>
-                    <form className="card-body">
+                    <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>

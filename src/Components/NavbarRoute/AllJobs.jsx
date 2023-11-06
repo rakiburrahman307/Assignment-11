@@ -5,7 +5,7 @@ const AllJobs = () => {
         <div>
              <Helmet>
                 <meta charSet="utf-8" />
-                <title>All Jobs - JobSwift</title>
+                <title>All Jobs | JobSwift</title>
             </Helmet>
             <h2>This Is All jobs</h2>
         </div>

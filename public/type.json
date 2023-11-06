@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "type": "On Site Job"
+    },
+    {
+        "id": 2,
+        "type": "Remote Job"
+    },
+    {
+        "id": 3,
+        "type": "Hybrid"
+    },
+    {
+        "id": 4,
+        "type": "Part Time"
+    }
+]

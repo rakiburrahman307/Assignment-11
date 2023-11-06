@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet";
 import Banner from "./Banner";
+import HomeTab from "./HomeTab";
+
 
 const Home = () => {
     return (
@@ -8,7 +10,10 @@ const Home = () => {
                 <meta charSet="utf-8" />
                 <title>Home - JobSwift</title>
             </Helmet>
+         
          <Banner></Banner>
+         <HomeTab></HomeTab>
+       
         </div>
     );
 };

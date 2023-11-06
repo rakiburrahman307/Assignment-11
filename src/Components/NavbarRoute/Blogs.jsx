@@ -5,7 +5,7 @@ const Blogs = () => {
         <div>
              <Helmet>
                 <meta charSet="utf-8" />
-                <title>Blogs - JobSwift</title>
+                <title>Blogs | JobSwift</title>
             </Helmet>
             <h2>This is Blog</h2>
         </div>
