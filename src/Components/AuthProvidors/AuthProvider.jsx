@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "./FireBase/FirebaseConfig";
 
 
@@ -9,6 +9,12 @@ const AuthProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
+    
+    // Dark Mode Implement 
+    const toggleDarkMode =()=>{
+        return setDarkMode(!darkMode);
+    }
 
     // log In With Google 
     const logInWithGoogle = () => {
@@ -20,6 +26,18 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
+
+    // log out 
+    const logOut = () => {
+        signOut(auth)
+        .then((result) => {
+            console.log(result)
+        })
+        .catch((error) => {
+            console.log(error.message)
+        })
+      
+    };
     // Create User 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -43,6 +61,9 @@ const AuthProvider = ({ children }) => {
         logInWithGoogle,
         logInWithEmailAndPassword,
         createUser,
+        logOut,
+        toggleDarkMode,
+        darkMode,
     }
     return (
         <AuthContext.Provider value={authInfo}>

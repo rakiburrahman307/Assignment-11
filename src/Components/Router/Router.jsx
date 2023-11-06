@@ -6,6 +6,11 @@ import AllJobs from "../NavbarRoute/AllJobs";
 import Blogs from "../NavbarRoute/Blogs";
 import ErrorPage404 from "../ErrorPage404/ErrorPage404";
 import SignUp from "../SignUpPage/SignUp";
+import MyJob from "../NavbarRoute/MyJob";
+import Profile from "../NavbarRoute/Profile";
+import AddJob from "../NavbarRoute/AddJob";
+import AppliedJobs from "../NavbarRoute/AppliedJobs";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +37,22 @@ const router = createBrowserRouter([
         {
           path:'/signup',
           element:<SignUp></SignUp>
+        },
+        {
+          path:'/my_job',
+          element: <PrivateRoute><MyJob/></PrivateRoute>,
+        },
+        {
+          path:'/profile',
+          element: <PrivateRoute><Profile/></PrivateRoute>,
+        },
+        {
+          path:'/add_job',
+          element: <PrivateRoute><AddJob/></PrivateRoute>,
+        },
+        {
+          path:'/applied_job',
+          element: <PrivateRoute><AppliedJobs/></PrivateRoute>,
         }
       ],
     },
