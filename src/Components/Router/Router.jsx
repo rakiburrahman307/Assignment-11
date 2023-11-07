@@ -12,6 +12,7 @@ import AddJob from "../NavbarRoute/AddJob";
 import AppliedJobs from "../NavbarRoute/AppliedJobs";
 import PrivateRoute from "./PrivateRoute";
 import DetailsPage from "../Pages/DetailsPage";
+import UpdatePage from "../Pages/updatePage";
 
 const router = createBrowserRouter([
     {
@@ -62,6 +63,12 @@ const router = createBrowserRouter([
           path:'/all_job/:id',
           element: <PrivateRoute><DetailsPage/></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/all_jobs/${params.id}`)
+        },
+        {
+          path:'update/:id',
+          element: <PrivateRoute><UpdatePage/></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/all_jobs/${params.id}`)
+
         }
       ],
     },

@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const AllMyJobsRow = ({job}) => {
+const AllMyJobsRow = ({job, handleDelete}) => {
     const {_id, userName, photoURL, jobTitle, salary, category, applicantsNumber, formatStartDate, formatEndDate } = job;
 
     return (
@@ -35,8 +35,9 @@ const AllMyJobsRow = ({job}) => {
                 {formatStartDate}
             </td>
             <td>{formatEndDate}</td>
-            <th>
-                <Link to={`/all_job/${_id}`} className="btn btn-outline btn-xs btn-info">details</Link>
+            <th className='space-x-2'>
+                <Link to={`/update/${_id}`} className="btn btn-outline btn-xs btn-warning">Update</Link>
+                <Link onClick={()=>handleDelete(_id)} className="btn btn-outline btn-xs btn-error">Delete</Link>
             </th>
         </tr>
 
@@ -44,7 +45,8 @@ const AllMyJobsRow = ({job}) => {
 };
 
 AllMyJobsRow.propTypes = {
-    job: PropTypes.object.isRequired
+    job: PropTypes.object.isRequired,
+    handleDelete: PropTypes.func
 };
 
 export default AllMyJobsRow;
