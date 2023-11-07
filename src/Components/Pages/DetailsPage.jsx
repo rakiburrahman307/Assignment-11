@@ -13,7 +13,7 @@ const DetailsPage = () => {
     const applyUserEmail = user?.email;
     const email = user?.email;
     const filterData = useLoaderData();
-    const { _id, description, jobTitle, photoURL, salary, formatEndDate, jobPost } = filterData;
+    const { _id, category, description, jobTitle, photoURL, salary, formatEndDate, jobPost } = filterData;
 
     // EmailJS service ID
     const serviceID = 'service_lp2l0en';
@@ -44,7 +44,7 @@ const DetailsPage = () => {
         const form = e.target;
         const cvLink = form.cv_link.value;
 
-        const data = { applyUserEmail, description, jobTitle, photoURL, salary, formatEndDate, jobPost, cvLink };
+        const data = { applyUserEmail, description, jobTitle, photoURL, salary, formatEndDate, jobPost, cvLink, category };
 
         axios.post('http://localhost:5000/applied_job', data, { withCredentials: true })
             .then(() => {

@@ -39,7 +39,7 @@ const AllJobs = () => {
     <tbody>
       {/* All row */}
       {
-            data.map(row => <AllJobsTableRow key={row._id} row={row}></AllJobsTableRow>)
+            data?.map(row => <AllJobsTableRow key={row._id} row={row}></AllJobsTableRow>)
       }
     </tbody>
 
