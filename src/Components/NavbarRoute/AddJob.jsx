@@ -4,16 +4,17 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvidors/AuthProvider";
-import axios from "axios";
-import { toast } from "react-toastify";
+// import axios from "axios";
+// import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddJob = () => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
-    const handleAddJob = (e) =>{
+    const handleAddJob = (e) => {
         e.preventDefault();
         const form = e.target;
         const photoURL = form.photoUrl.value;
@@ -23,16 +24,19 @@ const AddJob = () => {
         const category = form.category.value;
         const userName = user.displayName;
         const email = user.email;
+        const formatStartDate = startDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
+        const formatEndDate = endDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
 
-        const data= {email,userName, photoURL,jobTitle,description,salary,category, startDate, endDate}
+        // const data = { email, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate }
+        console.log(email, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate)
 
-        axios.post('http://localhost:5000/all_jobs',data,{ withCredentials: true })
-          .then(()=> {
-            toast.success('Job added successfully')
-          })
-          .catch( (error)=> {
-            toast.error(error.message);
-          });
+        // axios.post('http://localhost:5000/all_jobs', data, { withCredentials: true })
+        //     .then(() => {
+        //         toast.success('Job added successfully')
+        //     })
+        //     .catch((error) => {
+        //         toast.error(error.message);
+        //     });
     }
     return (
         <div>
@@ -68,7 +72,7 @@ const AddJob = () => {
                                     <label className="label">
                                         <span className="label-text">Salary range</span>
                                     </label>
-                                    <input type="text"name="salary" placeholder="Salary range" className="input input-bordered" required />
+                                    <input type="text" name="salary" placeholder="Salary range" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -77,27 +81,40 @@ const AddJob = () => {
                                     <input type="text" name="description" placeholder="Job Description" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
-                                <label className="label">
+                                    <label className="label">
                                         <span className="label-text">Job Posting Date</span>
                                     </label>
-                                <DatePicker className="input input-bordered" selected={startDate} onChange={(date) => setStartDate(date)} />
+                                    <DatePicker
+                                        className="input input-bordered"
+                                        selected={startDate}
+                                        onChange={(date) => setStartDate(date)}
+                                        dateFormat="dd/MM/yyyy"
+                                        showTimeSelect={false}
+                                        timeFormat=""
+                                    />
                                 </div>
-                                <select className="select select-bordered w-full max-w-xs mt-8" name="category">
-                                <label className="label">
-                                        <span className="label-text"></span>
-                                    </label>
-                                    <option disabled selected>Job Category</option>
-                                    <option value='onSiteJob'>On Site Jobs</option>
-                                    <option value='remoteJob'>Remote Jobs</option>
-                                    <option value='hybrid'>Hybrid</option>
-                                    <option value='partTimeJob'>Part Time Jobs</option>
+                                <select className="select select-bordered w-full max-w-xs mt-8" name="category" defaultValue=''>
+                                    <option value="" disabled hidden>
+                                        Job Category
+                                    </option>
+                                    <option value="onSiteJob">On Site Jobs</option>
+                                    <option value="remoteJob">Remote Jobs</option>
+                                    <option value="hybrid">Hybrid</option>
+                                    <option value="partTimeJob">Part Time Jobs</option>
                                 </select>
 
                                 <div className="form-control">
-                                <label className="label">
+                                    <label className="label">
                                         <span className="label-text">Application Deadline</span>
                                     </label>
-                                <DatePicker className="input input-bordered" selected={endDate} onChange={(date) => setEndDate(date)} />
+                                    <DatePicker
+                                        className="input input-bordered"
+                                        selected={endDate}
+                                        onChange={(date) => setEndDate(date)}
+                                        dateFormat="dd/MM/yyyy"
+                                        showTimeSelect={false}
+                                        timeFormat=""
+                                    />
                                 </div>
                             </div>
 

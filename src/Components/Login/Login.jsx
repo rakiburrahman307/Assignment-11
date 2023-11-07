@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvidors/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
-import TostMessage from "../Pages/TostMessage/TostMassage";
+
 
 const Login = () => {
     const { logInWithGoogle, logInWithEmailAndPassword} = useContext(AuthContext);
@@ -20,13 +20,13 @@ const Login = () => {
         logInWithEmailAndPassword(email, password)
         .then(() => {
             // Signed in 
-                TostMessage('Sign in successful');
+                toast.success('Sign in successful');
                 navigate(location?.state ? location.state : '/');
             
             // ...
           })
           .catch((error) => {
-            TostMessage(error.message);
+            toast.error(error.message);
           });
     }
 

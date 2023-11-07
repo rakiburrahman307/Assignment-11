@@ -11,6 +11,7 @@ import Profile from "../NavbarRoute/Profile";
 import AddJob from "../NavbarRoute/AddJob";
 import AppliedJobs from "../NavbarRoute/AppliedJobs";
 import PrivateRoute from "./PrivateRoute";
+import DetailsPage from "../Pages/DetailsPage";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
         {
           path:'/all_jobs',
           element: <AllJobs/>,
+          loader: ()=> fetch('http://localhost:5000/all_jobs'),
         },
         {
           path: '/blogs',
@@ -53,6 +55,11 @@ const router = createBrowserRouter([
         {
           path:'/applied_job',
           element: <PrivateRoute><AppliedJobs/></PrivateRoute>,
+        },
+        {
+          path:'/all_job/:id',
+          element: <PrivateRoute><DetailsPage/></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/all_jobs/${params.id}`)
         }
       ],
     },
