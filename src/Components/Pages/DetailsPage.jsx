@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import "./details_style.css";
 import { AuthContext } from "../AuthProvidors/AuthProvider";
@@ -8,6 +8,7 @@ import emailjs from 'emailjs-com';
 
 const DetailsPage = () => {
     const { user } = useContext(AuthContext);
+    const [id, setId] = useState();
     const name = user?.displayName;
     const applyUserEmail = user?.email;
     const email = user?.email;
@@ -23,7 +24,8 @@ const DetailsPage = () => {
 
 
 
-    const handleApplyJobs = () => {
+    const handleApplyJobs = (id) => {
+        setId(id);
         const isDeadlineOver = Date.now() > new Date(formatEndDate).getTime();
         // else if (jobPost === user.email) {
         //     alert("Employers cannot apply for their own jobs.");
@@ -41,16 +43,23 @@ const DetailsPage = () => {
         e.preventDefault();
         const form = e.target;
         const cvLink = form.cv_link.value;
-        console.log(cvLink);
-        const data = { applyUserEmail, description, jobTitle, photoURL, salary, formatEndDate, jobPost };
+
+        const data = { applyUserEmail, description, jobTitle, photoURL, salary, formatEndDate, jobPost, cvLink };
 
         axios.post('http://localhost:5000/applied_job', data, { withCredentials: true })
             .then(() => {
                 toast.success('Job Applied successfully');
                 document.getElementById('my_modal_1').close();
+                axios.put(`http://localhost:5000/all_jobs/${id}`, { withCredentials: true })
+                    .then(() => {
+                        console.log('Update successfully');
+                    })
+                    .catch(error => {
+                        console.error(error.message);
+                    });
 
                 const templateParams = {
-                    to_email: user.email,
+                    to_email: user?.email,
                     from_name: 'jobSwift',
                     message: 'Successfully received your CV. Please stay connected.',
                 };

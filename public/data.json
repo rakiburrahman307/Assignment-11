@@ -1,143 +1,101 @@
-[
 
-
-
-
-
-
-
-
+  [
     {
-      "email": "rakibhassan305@gmail.com",
-      "userName": "Md.Rakibur Rahman",
+        "jobPost": "rakibhassan305@gmail.com",
+        "userName": "Liam Wilson",
+        "photoURL": "https://i.ibb.co/tcmPG82/ben-white-m-O9v-Kb-G5csg-unsplash.jpg",
+        "jobTitle": "Social Media Coordinator",
+        "description": "Manage our social media presence and create engaging content.",
+        "salary": 25000,
+        "category": "partTimeJob",
+        "formatStartDate": "2023-11-10",
+        "formatEndDate": "2023-12-10",
+        "applicantsNumber": 20
+      },
+      {
+        "jobPost": "rakibhassan305@gmail.com",
+        "userName": "Ella Martinez",
+        "photoURL": "https://i.ibb.co/n8JDQVT/teemu-paananen-bzdhc5b3-Bxs-unsplash.jpg",
+        "jobTitle": "Customer Service Representative",
+        "description": "Provide excellent customer support during peak hours.",
+        "salary": 20000,
+        "category": "partTimeJob",
+        "formatStartDate": "2023-11-15",
+        "formatEndDate": "2023-12-15",
+        "applicantsNumber": 15
+      },
+    {
+      "jobPost": "rakibhassan305@gmail.com",
+      "userName": "Sophia Miller",
       "photoURL": "https://i.ibb.co/wgckHvD/marten-bjork-6d-W3xy-Qvc-YE-unsplash.jpg",
-      "jobTitle": "Developer",
-      "description": "Supra",
-      "salary": "1000",
-      "category": "remoteJob",
-      "startDate": "2023-11-06T18:52:59.368Z",
-      "endDate": "2023-11-21T18:52:59.000Z"
-    },
-    {
-      "email": "another@example.com",
-      "userName": "John Doe",
-      "photoURL": "https://i.ibb.co/mGyj0mG/magnet-me-LDc-C7a-CWVlo-unsplash.jpg",
-      "jobTitle": "Front-end Developer",
-      "description": "Exciting front-end development role",
-      "salary": "1200",
-      "category": "onSiteJob",
-      "startDate": "2023-11-07T12:00:00.000Z",
-      "endDate": "2023-11-22T12:00:00.000Z"
-    },
-    {
-      "email": "example@gmail.com",
-      "userName": "Jane Doe",
-      "photoURL": "https://i.ibb.co/kMxPRY1/campaign-creators-g-Msn-Xq-ILjp4-unsplash.jpg",
-      "jobTitle": "Product Manager",
-      "description": "Lead product management team",
-      "salary": "1500",
+      "jobTitle": "UX/UI Designer",
+      "description": "Create stunning user experiences and design beautiful interfaces.",
+      "salary": 90000,
       "category": "hybrid",
-      "startDate": "2023-11-08T09:00:00.000Z",
-      "endDate": "2023-11-23T09:00:00.000Z"
+      "formatStartDate": "2023-11-22",
+      "formatEndDate": "2023-12-22",
+      "applicantsNumber": 40
     },
     {
-      "email": "user@example.com",
-      "userName": "Alice",
+      "jobPost": "rakibhassan305@gmail.com",
+      "userName": "Ethan Turner",
+      "photoURL": "https://i.ibb.co/mGyj0mG/magnet-me-LDc-C7a-CWVlo-unsplash.jpg",
+      "jobTitle": "Financial Analyst",
+      "description": "Analyze financial data and contribute to strategic decision-making.",
+      "salary": 95000,
+      "category": "onSiteJob",
+      "formatStartDate": "2023-11-17",
+      "formatEndDate": "2023-12-17",
+      "applicantsNumber": 35
+    },
+    {
+      "jobPost": "rakibhassan305@gmail.com",
+      "userName": "Olivia Adams",
       "photoURL": "https://i.ibb.co/kMxPRY1/campaign-creators-g-Msn-Xq-ILjp4-unsplash.jpg",
       "jobTitle": "Content Writer",
-      "description": "Create engaging content",
-      "salary": "800",
-      "category": "partTimeJob",
-      "startDate": "2023-11-09T15:30:00.000Z",
-      "endDate": "2023-11-24T15:30:00.000Z"
-    },
-    {
-      "email": "test@gmail.com",
-      "userName": "Bob",
-      "photoURL": "https://i.ibb.co/LdBRGL8/jo-szczepanska-5ai-Rb5f464-A-unsplash.jpg",
-      "jobTitle": "Data Scientist",
-      "description": "Analyzing and interpreting complex data sets",
-      "salary": "2000",
+      "description": "Craft compelling content that engages our audience across various platforms.",
+      "salary": 75000,
       "category": "remoteJob",
-      "startDate": "2023-11-10T10:00:00.000Z",
-      "endDate": "2023-11-25T10:00:00.000Z"
+      "formatStartDate": "2023-11-12",
+      "formatEndDate": "2023-12-12",
+      "applicantsNumber": 30
     },
     {
-      "email": "admin@example.com",
-      "userName": "Admin",
-      "photoURL": "https://i.ibb.co/LdBRGL8/jo-szczepanska-5ai-Rb5f464-A-unsplash.jpg",
-      "jobTitle": "System Administrator",
-      "description": "Manage and maintain IT infrastructure",
-      "salary": "1800",
-      "category": "onSiteJob",
-      "startDate": "2023-11-11T08:45:00.000Z",
-      "endDate": "2023-11-26T08:45:00.000Z"
-    },
-    {
-      "email": "designer@gmail.com",
-      "userName": "Designer",
-      "photoURL": "https://i.ibb.co/Qp6Bh66/markus-winkler-7i-SEHWsx-PLw-unsplash.jpg",
-      "jobTitle": "Graphic Designer",
-      "description": "Create visually appealing graphics",
-      "salary": "1300",
-      "category": "hybrid",
-      "startDate": "2023-11-12T14:15:00.000Z",
-      "endDate": "2023-11-27T14:15:00.000Z"
-    },
-    {
-      "email": "manager@example.com",
-      "userName": "Manager",
-      "photoURL": "https://i.ibb.co/JsPN59k/jason-goodman-Oalh2-Moj-Uuk-unsplash.jpg",
-      "jobTitle": "Project Manager",
-      "description": "Coordinate and lead project teams",
-      "salary": "1700",
-      "category": "partTimeJob",
-      "startDate": "2023-11-13T11:30:00.000Z",
-      "endDate": "2023-11-28T11:30:00.000Z"
-    },
-    {
-      "email": "sales@example.com",
-      "userName": "Sales",
-      "photoURL": "https://i.ibb.co/n8JDQVT/teemu-paananen-bzdhc5b3-Bxs-unsplash.jpg",
+      "jobPost": "rakibhassan305@gmail.com",
+      "userName": "William Brown",
+      "photoURL": "https://i.ibb.co/kMxPRY1/campaign-creators-g-Msn-Xq-ILjp4-unsplash.jpg",
       "jobTitle": "Sales Representative",
-      "description": "Promote and sell company products",
-      "salary": "1500",
-      "category": "remoteJob",
-      "startDate": "2023-11-14T16:20:00.000Z",
-      "endDate": "2023-11-29T16:20:00.000Z"
-    },
-    {
-      "email": "teacher@gmail.com",
-      "userName": "Teacher",
-      "photoURL": "https://i.ibb.co/tcmPG82/ben-white-m-O9v-Kb-G5csg-unsplash.jpg",
-      "jobTitle": "Mathematics Teacher",
-      "description": "Teach mathematics to students",
-      "salary": "1200",
-      "category": "onSiteJob",
-      "startDate": "2023-11-15T13:10:00.000Z",
-      "endDate": "2023-11-30T13:10:00.000Z"
-    },
-    {
-      "email": "support@example.com",
-      "userName": "Support",
-      "photoURL": "https://i.ibb.co/JsPN59k/jason-goodman-Oalh2-Moj-Uuk-unsplash.jpg",
-      "jobTitle": "Customer Support Specialist",
-      "description": "Assist customers with product inquiries",
-      "salary": "1000",
+      "description": "Drive sales and build strong relationships with clients.",
+      "salary": 80000,
       "category": "hybrid",
-      "startDate": "2023-11-16T17:45:00.000Z",
-      "endDate": "2023-12-01T17:45:00.000Z"
+      "formatStartDate": "2023-11-28",
+      "formatEndDate": "2023-12-28",
+      "applicantsNumber": 45
     },
     {
-      "email": "writer@example.com",
-      "userName": "Writer",
-      "photoURL": "https://i.ibb.co/tcmPG82/ben-white-m-O9v-Kb-G5csg-unsplash.jpg",
-      "jobTitle": "Technical Writer",
-      "description": "Create technical documentation",
-      "salary": "1400",
-      "category": "partTimeJob",
-      "startDate": "2023-11-17T09:55:00.000Z",
-      "endDate": "2023-12-02T09:55:00.000Z"
-    }
+      "jobPost": "rakibhassan305@gmail.com",
+      "userName": "Ava Garcia",
+      "photoURL": "https://i.ibb.co/LdBRGL8/jo-szczepanska-5ai-Rb5f464-A-unsplash.jpg",
+      "jobTitle": "Human Resources Manager",
+      "description": "Lead our HR department and support the growth and development of our team.",
+      "salary": 100000,
+      "category": "remoteJob",
+      "formatStartDate": "2023-11-14",
+      "formatEndDate": "2023-12-14",
+      "applicantsNumber": 50
+    },
+    {
+        "jobPost": "rakibhassan305@gmail.com",
+        "userName": "David Johnson",
+        "photoURL": "https://example.com/davidjohnson.jpg",
+        "jobTitle": "Data Analyst",
+        "description": "Use your analytical skills to extract insights from data.",
+        "salary": 90000,
+        "category": "onSiteJob",
+        "formatStartDate": "2023-11-18",
+        "formatEndDate": "2023-12-18",
+        "applicantsNumber": 35
+      }
   ]
+  
   

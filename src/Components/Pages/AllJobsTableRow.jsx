@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const AllJobsTableRow = ({ row}) => {
-    const {_id, userName, photoURL, jobTitle, salary, category, formatStartDate, formatEndDate } = row;
+    const {_id, userName, photoURL, jobTitle, salary, category, applicantsNumber, formatStartDate, formatEndDate } = row;
     return (
         <tr>
             <td>
@@ -27,6 +27,9 @@ const AllJobsTableRow = ({ row}) => {
                 <p>$ {salary}</p>
             </td>
             <td>
+                <p>{applicantsNumber}</p>
+            </td>
+            <td>
                 {formatStartDate}
             </td>
             <td>{formatEndDate}</td>
@@ -38,8 +41,7 @@ const AllJobsTableRow = ({ row}) => {
 };
 
 AllJobsTableRow.propTypes = {
-    row: PropTypes.object,
-    handleDetails: PropTypes.func
+    row: PropTypes.object.isRequired,
 };
 
 export default AllJobsTableRow;

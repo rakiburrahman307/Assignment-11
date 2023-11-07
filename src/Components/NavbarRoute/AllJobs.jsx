@@ -29,6 +29,7 @@ const AllJobs = () => {
         <th>Name who posted the job</th>
         <th>Job Title</th>
         <th>Salary</th>
+        <th>Applicants Number</th>
         <th>Job Posting Date</th>
         <th>Application Deadline</th>
         <th><input onChange={handleSearch} type="text" placeholder="Search here" className="input input-bordered input-sm w-32"/></th>
