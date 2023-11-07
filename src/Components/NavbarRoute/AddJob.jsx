@@ -1,11 +1,10 @@
 import { Helmet } from "react-helmet";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvidors/AuthProvider";
-// import axios from "axios";
-// import { toast } from 'react-toastify';
+import axios from "axios";
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -23,20 +22,20 @@ const AddJob = () => {
         const salary = form.salary.value;
         const category = form.category.value;
         const userName = user.displayName;
-        const email = user.email;
+        const jobPost = user.email;
         const formatStartDate = startDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
         const formatEndDate = endDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
 
-        // const data = { email, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate }
-        console.log(email, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate)
+        const data = {jobPost, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate }
+        console.log(jobPost, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate)
 
-        // axios.post('http://localhost:5000/all_jobs', data, { withCredentials: true })
-        //     .then(() => {
-        //         toast.success('Job added successfully')
-        //     })
-        //     .catch((error) => {
-        //         toast.error(error.message);
-        //     });
+        axios.post('http://localhost:5000/all_jobs', data, { withCredentials: true })
+            .then(() => {
+                toast.success('Job added successfully')
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
     }
     return (
         <div>

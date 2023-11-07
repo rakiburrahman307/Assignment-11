@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const AllJobsTableRow = ({ row}) => {
-    const {_id, userName, photoURL, jobTitle, salary, category, startDate, endDate } = row;
+    const {_id, userName, photoURL, jobTitle, salary, category, formatStartDate, formatEndDate } = row;
     return (
         <tr>
             <td>
@@ -27,9 +27,9 @@ const AllJobsTableRow = ({ row}) => {
                 <p>$ {salary}</p>
             </td>
             <td>
-                {startDate}
+                {formatStartDate}
             </td>
-            <td>{endDate}</td>
+            <td>{formatEndDate}</td>
             <th>
                 <Link to={`/all_job/${_id}`} className="btn btn-outline btn-xs btn-info">details</Link>
             </th>
