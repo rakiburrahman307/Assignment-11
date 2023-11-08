@@ -27,14 +27,14 @@ const DetailsPage = () => {
     const handleApplyJobs = (id) => {
         setId(id);
         const isDeadlineOver = Date.now() > new Date(formatEndDate).getTime();
-        // else if (jobPost === user.email) {
-        //     alert("Employers cannot apply for their own jobs.");
-        //     return;
-        //   }
+        
         if (isDeadlineOver) {
             toast.error("Application deadline has passed. You cannot apply.");
             return;
-        } else {
+        }else if (jobPost === user.email) {
+            alert("Employers cannot apply for their own jobs.");
+            return;
+          } else {
             // Open the modal using document.getElementById('ID').showModal() method
             document.getElementById('my_modal_1').showModal();
         }
@@ -96,6 +96,7 @@ const DetailsPage = () => {
                     <h2 className="card-title font-bold">Title: {jobTitle}</h2>
                     <h3 className=" text-xl font-semibold">Salary: ${salary}</h3>
                     <h3 className=" text-lg font-semibold">Number of Applicants: {applicantsNumber}</h3>
+                    <h3 className=" text-lg font-semibold">Number of Applicants: {formatEndDate}</h3>
                     <p className="text-justify">
                         <span className="font-bold">Description:</span> {description}
                     </p>
