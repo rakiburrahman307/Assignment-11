@@ -1,0 +1,55 @@
+
+  [
+    {
+       "id":1,
+        "photoURL": "https://i.ibb.co/tcmPG82/ben-white-m-O9v-Kb-G5csg-unsplash.jpg",
+        "jobTitle": "Social Media Coordinator",
+        "description": "Manage our social media presence and create engaging content.",
+        "category": "partTimeJob"
+
+      },
+      {
+        "id":2,
+        "photoURL": "https://i.ibb.co/n8JDQVT/teemu-paananen-bzdhc5b3-Bxs-unsplash.jpg",
+        "jobTitle": "Customer Service Representative",
+        "description": "Provide excellent customer support during peak hours.",
+        "category": "partTimeJob"
+  
+      },
+    {
+      "id":3,
+      "photoURL": "https://i.ibb.co/wgckHvD/marten-bjork-6d-W3xy-Qvc-YE-unsplash.jpg",
+      "jobTitle": "UX/UI Designer",
+      "description": "Create stunning user experiences and design beautiful interfaces.",
+      "category": "hybrid"
+    
+
+    },
+    {"id":4,
+      "photoURL": "https://i.ibb.co/mGyj0mG/magnet-me-LDc-C7a-CWVlo-unsplash.jpg",
+      "jobTitle": "Financial Analyst",
+      "description": "Analyze financial data and contribute to strategic decision-making.",
+      "category": "onSiteJob"
+  
+    },
+    {
+      "id":5,
+      "photoURL": "https://i.ibb.co/kMxPRY1/campaign-creators-g-Msn-Xq-ILjp4-unsplash.jpg",
+      "jobTitle": "Content Writer",
+      "description": "Craft compelling content that engages our audience across various platforms.",
+      "category": "remoteJob"
+
+    },
+    {
+      "id":6,
+      "photoURL": "https://i.ibb.co/kMxPRY1/campaign-creators-g-Msn-Xq-ILjp4-unsplash.jpg",
+      "jobTitle": "Sales Representative",
+      "description": "Drive sales and build strong relationships with clients.",
+      "category": "hybrid"
+     
+    }
+    
+    
+  ]
+  
+  

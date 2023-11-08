@@ -13,7 +13,7 @@ const DetailsPage = () => {
     const applyUserEmail = user?.email;
     const email = user?.email;
     const filterData = useLoaderData();
-    const { _id, category, description, jobTitle, photoURL, salary, formatEndDate, jobPost } = filterData;
+    const { _id, applicantsNumber, category, description, jobTitle, photoURL, salary, formatEndDate, jobPost } = filterData;
 
     // EmailJS service ID
     const serviceID = 'service_lp2l0en';
@@ -95,7 +95,7 @@ const DetailsPage = () => {
                 <div className="card-body">
                     <h2 className="card-title font-bold">Title: {jobTitle}</h2>
                     <h3 className=" text-xl font-semibold">Salary: ${salary}</h3>
-                    <h3 className=" text-lg font-semibold">Number of Applicants: 10</h3>
+                    <h3 className=" text-lg font-semibold">Number of Applicants: {applicantsNumber}</h3>
                     <p className="text-justify">
                         <span className="font-bold">Description:</span> {description}
                     </p>

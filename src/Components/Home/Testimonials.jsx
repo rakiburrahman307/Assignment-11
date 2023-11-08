@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { AuthContext } from '../AuthProvidors/AuthProvider';
 
 const Testimonials = () => {
-    const {darkMode} = useContext(AuthContext);
+    const { darkMode } = useContext(AuthContext);
     const testimonials = [
         {
             id: 1,
@@ -48,7 +48,7 @@ const Testimonials = () => {
             company: 'ContentCrafters Co.',
             quote: 'JobSwift is a game-changer for content marketers. It helped me discover remote opportunities and advance my career in content strategy.',
         }
-      
+
     ];
 
     return (
@@ -59,7 +59,7 @@ const Testimonials = () => {
             </Helmet>
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-5xl font-extrabold mb-8 text-center">What <span className='text-teal-600'>Users Say</span></h1>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-5">
                     {testimonials.map((testimonial) => (
                         <div key={testimonial.id} className="bg-white p-8 rounded-lg shadow-md transition-transform transform hover:scale-105">
                             <p className="italic text-gray-600 mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
