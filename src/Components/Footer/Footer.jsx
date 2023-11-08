@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvidors/AuthProvider";
 
 const Footer = () => {
+    const {darkMode} = useContext(AuthContext);
     return (
-        <footer className="footer p-10 bg-[#006B6F]  text-[#DDDDDD]">
+        <footer className={`footer p-10 ${darkMode ? 'bg-black' : 'bg-[#007B7F]'}  text-[#DDDDDD]`}>
             <aside>
             <Link to='/' className="btn btn-ghost normal-case text-xl text-[#DDDDDD] ">JobSwift</Link>                <p>JobsSwift Industries Ltd.<br />Providing the best jobs for you since 2023. <br /> &copy; 2023 JobsSwift. All rights reserved.</p>
                 <p></p>

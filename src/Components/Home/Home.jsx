@@ -4,8 +4,8 @@ import HomeTab from "./HomeTab";
 import FeaturedJobs from "./FeaturedJobs";
 import Testimonials from "./Testimonials";
 
-
 const Home = () => {
+
     return (
         <div>
             <Helmet>

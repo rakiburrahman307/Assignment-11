@@ -1,7 +1,10 @@
 
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
+import { AuthContext } from '../AuthProvidors/AuthProvider';
 
 const Testimonials = () => {
+    const {darkMode} = useContext(AuthContext);
     const testimonials = [
         {
             id: 1,
@@ -49,13 +52,13 @@ const Testimonials = () => {
     ];
 
     return (
-        <div className="bg-gradient-to-r from-gray-900 to-gray-300 min-h-screen p-8">
+        <div className={`py-16 ${darkMode ? 'text-gray-400' : 'text-black'}  ${darkMode ? 'bg-gray-600' : 'bg-gray-100'}`}>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Testimonials | JobSwift</title>
             </Helmet>
-            <div className="max-w-4xl mx-auto text-white">
-                <h1 className="text-5xl font-extrabold mb-8 text-center">What Users Say</h1>
+            <div className="max-w-4xl mx-auto">
+                <h1 className="text-5xl font-extrabold mb-8 text-center">What <span className='text-teal-600'>Users Say</span></h1>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {testimonials.map((testimonial) => (
                         <div key={testimonial.id} className="bg-white p-8 rounded-lg shadow-md transition-transform transform hover:scale-105">

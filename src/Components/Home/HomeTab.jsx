@@ -27,7 +27,7 @@ const HomeTab = () => {
       })
   };
   return (
-    <div>
+    <div className='mb-10'>
       <h2 className='text-5xl font-extrabold my-8 text-center'>Available Our <span className='text-teal-500'>Jobs</span></h2>
       <Tabs>
         <TabList>

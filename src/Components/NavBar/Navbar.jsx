@@ -21,7 +21,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className="navbar bg-[#007B7F] dark:bg-[#191970] sticky top-0 z-20 shadow-lg">
+        <div className={`navbar ${darkMode ? 'bg-black' : 'bg-[#007B7F]'} sticky top-0 z-20 shadow-lg`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
