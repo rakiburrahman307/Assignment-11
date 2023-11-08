@@ -46,11 +46,11 @@ const DetailsPage = () => {
 
         const data = { applyUserEmail, description, jobTitle, photoURL, salary, formatEndDate, jobPost, cvLink, category };
 
-        axios.post('http://localhost:5000/applied_job', data, { withCredentials: true })
+        axios.post('https://assignment-11-server-pi-rouge.vercel.app/applied_job', data, { withCredentials: true })
             .then(() => {
                 toast.success('Job Applied successfully');
                 document.getElementById('my_modal_1').close();
-                axios.put(`http://localhost:5000/all_jobs/${id}`, { withCredentials: true })
+                axios.put(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${id}`, { withCredentials: true })
                     .then(() => {
                         console.log('Update successfully');
                     })

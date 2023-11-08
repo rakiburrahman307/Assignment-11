@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
       
           if (currentUser) {
             setUser(currentUser);
-            axios.post('http://localhost:5000/jwt', userLoggedIn, { withCredentials: true })
+            axios.post('https://assignment-11-server-pi-rouge.vercel.app/jwt', userLoggedIn, { withCredentials: true })
               .then((res) => {
                 console.log(res.data);
               })
@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
                 console.error(err.message);
               });
           } else {
-            axios.post('http://localhost:5000/logout', userLoggedIn, { withCredentials: true })
+            axios.post('https://assignment-11-server-pi-rouge.vercel.app/logout', userLoggedIn, { withCredentials: true })
               .then((res) => {
                 console.log(res.data);
               })

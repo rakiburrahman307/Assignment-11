@@ -17,7 +17,7 @@ const HomeTab = () => {
   }, []);
 
   const handleFilter = (category) => {
-    axios.get(`http://localhost:5000/all_jobs`, { withCredentials: true })
+    axios.get(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs`, { withCredentials: true })
       .then(res => {
         const filter = res?.data?.filter(jobs => jobs.category.toLowerCase() === category.toLowerCase());
         setFilterData(filter);

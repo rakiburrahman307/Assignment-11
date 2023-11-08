@@ -29,7 +29,7 @@ const AddJob = () => {
         const data = {jobPost, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate }
         console.log(jobPost, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate)
 
-        axios.post('http://localhost:5000/all_jobs', data, { withCredentials: true })
+        axios.post('https://assignment-11-server-pi-rouge.vercel.app/all_jobs', data, { withCredentials: true })
             .then(() => {
                 toast.success('Job added successfully')
             })

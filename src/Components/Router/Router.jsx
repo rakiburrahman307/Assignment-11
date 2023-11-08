@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: '/all_jobs',
         element: <AllJobs />,
-        loader: () => fetch('http://localhost:5000/all_jobs', { credentials: "include" }),
+        loader: () => fetch('https://assignment-11-server-pi-rouge.vercel.app/all_jobs', { credentials: "include" }),
       },
       {
         path: '/blogs',
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: '/my_job',
         element: <PrivateRoute><MyJob /></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/all_jobs', { credentials: "include" })
+        loader: () => fetch('https://assignment-11-server-pi-rouge.vercel.app/all_jobs', { credentials: "include" })
       },
       {
         path: '/profile',
@@ -57,17 +57,17 @@ const router = createBrowserRouter([
       {
         path: '/applied_job',
         element: <PrivateRoute><AppliedJobs /></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/applied_job', { credentials: "include" })
+        loader: () => fetch('https://assignment-11-server-pi-rouge.vercel.app/applied_job', { credentials: "include" })
       },
       {
         path: '/all_job/:id',
         element: <PrivateRoute><DetailsPage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
+        loader: ({ params }) => fetch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${params.id}`, { credentials: "include" })
       },
       {
         path: 'update/:id',
         element: <PrivateRoute><UpdatePage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
+        loader: ({ params }) => fetch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${params.id}`, { credentials: "include" })
 
       }
     ],
