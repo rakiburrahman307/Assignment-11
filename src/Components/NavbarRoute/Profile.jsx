@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../AuthProvidors/AuthProvider";
+import { motion } from "framer-motion"
 
 
 const Profile = () => {
@@ -16,7 +17,7 @@ const Profile = () => {
             <h2 className="text-4xl font-bold text-center mb-6 mx-2 md:mx-10">
                 Profile <span className="text-teal-600">Details</span>
             </h2>
-            <div className="card lg:card-side w-full px-8 bg-base-100 shadow-xl">
+            <motion.div animate={{ x: 100 }} initial={false}className="card lg:card-side w-full px-8 bg-base-100 shadow-xl">
                 <figure>
                     <img className="w-80 mx-auto" src={user?.photoURL} alt={user?.displayName} />
                 </figure>
@@ -26,7 +27,7 @@ const Profile = () => {
                     <h3 className=" text-lg font-semibold">Last LogIn: {user?.metadata.lastSignInTime}</h3>
                     
                 </div>
-            </div>
+            </motion.div>
         </div>
         </div>
     );
