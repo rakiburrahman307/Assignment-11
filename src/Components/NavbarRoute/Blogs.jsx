@@ -22,13 +22,13 @@ const Blogs = () => {
     ];
 
     return (
-        <div className="bg-gradient-to-r from-purple-600 to-indigo-200 min-h-screen p-8">
+        <div className="bg-gray-200 min-h-screen p-8">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Blogs | JobSwift</title>
             </Helmet>
             <div className="max-w-4xl mx-auto text-white">
-                <h1 className="text-5xl font-extrabold mb-8 text-center">Welcome to  <span className="text-teal-300">the Blog Page</span></h1>
+                <h1 className="text-5xl font-extrabold mb-8 text-center text-teal-500">Welcome to  <span className="text-gray-600">the Blog Page</span></h1>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {blogPosts.map((post) => (
                         <div key={post.id} className="bg-white p-8 rounded-lg shadow-md transition-transform transform hover:scale-105">

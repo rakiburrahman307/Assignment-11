@@ -15,63 +15,63 @@ import DetailsPage from "../Pages/DetailsPage";
 import UpdatePage from "../Pages/updatePage";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root></Root>,
-      errorElement: <ErrorPage404 />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path:'/login',
-          element: <Login />,
-        },
-        {
-          path:'/all_jobs',
-          element: <AllJobs/>,
-          loader: ()=> fetch('http://localhost:5000/all_jobs'),
-        },
-        {
-          path: '/blogs',
-          element: <Blogs/>,
-        },
-        {
-          path:'/signup',
-          element:<SignUp></SignUp>
-        },
-        {
-          path:'/my_job',
-          element: <PrivateRoute><MyJob/></PrivateRoute>,
-          loader: ()=> fetch('http://localhost:5000/all_jobs')
-        },
-        {
-          path:'/profile',
-          element: <PrivateRoute><Profile/></PrivateRoute>,
-        },
-        {
-          path:'/add_job',
-          element: <PrivateRoute><AddJob/></PrivateRoute>,
-        },
-        {
-          path:'/applied_job',
-          element: <PrivateRoute><AppliedJobs/></PrivateRoute>,
-          loader: ()=> fetch('http://localhost:5000/applied_job')
-        },
-        {
-          path:'/all_job/:id',
-          element: <PrivateRoute><DetailsPage/></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/all_jobs/${params.id}`)
-        },
-        {
-          path:'update/:id',
-          element: <PrivateRoute><UpdatePage/></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/all_jobs/${params.id}`)
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <ErrorPage404 />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/all_jobs',
+        element: <AllJobs />,
+        loader: () => fetch('http://localhost:5000/all_jobs', { credentials: "include" }),
+      },
+      {
+        path: '/blogs',
+        element: <Blogs />,
+      },
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: '/my_job',
+        element: <PrivateRoute><MyJob /></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/all_jobs', { credentials: "include" })
+      },
+      {
+        path: '/profile',
+        element: <PrivateRoute><Profile /></PrivateRoute>,
+      },
+      {
+        path: '/add_job',
+        element: <PrivateRoute><AddJob /></PrivateRoute>,
+      },
+      {
+        path: '/applied_job',
+        element: <PrivateRoute><AppliedJobs /></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/applied_job', { credentials: "include" })
+      },
+      {
+        path: '/all_job/:id',
+        element: <PrivateRoute><DetailsPage /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
+      },
+      {
+        path: 'update/:id',
+        element: <PrivateRoute><UpdatePage /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
 
-        }
-      ],
-    },
-  ]);
+      }
+    ],
+  },
+]);
 
-  export default router;
+export default router;
