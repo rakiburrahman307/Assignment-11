@@ -10,7 +10,7 @@ const AppliedJobs = () => {
   const [data, setData] = useState([]);
   const { toPDF, targetRef } = usePDF({ filename: 'page.pdf' });
 
-  const url = `http://localhost:5000/applied_job?email=${user?.email}`;
+  const url = `https://assignment-11-server-pi-rouge.vercel.app/applied_job?email=${user?.email}`;
 
   useEffect(() => {
     axios.get(url, { withCredentials: true })

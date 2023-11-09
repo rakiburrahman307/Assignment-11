@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: '/all_jobs',
         element: <AllJobs />,
-        loader: () => fetch('http://localhost:5000/all_jobs', { credentials: "include" }),
+        loader: () => fetch('https://assignment-11-server-pi-rouge.vercel.app/all_jobs', { credentials: "include" }),
       },
       {
         path: '/blogs',
@@ -64,12 +64,12 @@ const router = createBrowserRouter([
       {
         path: '/all_job/:id',
         element: <PrivateRoute><DetailsPage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
+        loader: ({ params }) => fetch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${params.id}`, { credentials: "include" })
       },
       {
         path: 'update/:id',
         element: <PrivateRoute><UpdatePage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
+        loader: ({ params }) => fetch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${params.id}`, { credentials: "include" })
 
       },
       {

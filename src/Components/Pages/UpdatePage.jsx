@@ -25,7 +25,7 @@ const UpdatePage = () => {
         const data = { photoURL, jobTitle, salary, formatStartDate, formatEndDate }
         console.log(photoURL, jobTitle, salary, formatStartDate, formatEndDate)
 
-        axios.patch(`http://localhost:5000/all_jobs/${_id}`, data, { withCredentials: true })
+        axios.patch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${_id}`, data, { withCredentials: true })
             .then(() => {
                 toast.success('Update successfully')
             })

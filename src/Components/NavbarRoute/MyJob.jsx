@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const MyJob = () => {
     const { user } = useContext(AuthContext);
     const [data, setData] = useState([]);
-    const url = `http://localhost:5000/my_jobs?email=${user?.email}`;
+    const url = `https://assignment-11-server-pi-rouge.vercel.app/my_jobs?email=${user?.email}`;
 
     useEffect(() => {
         axios.get(url, { withCredentials: true })
@@ -39,7 +39,7 @@ const MyJob = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/all_jobs/${id}`, { withCredentials: true })
+                axios.delete(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${id}`, { withCredentials: true })
                     .then(() => {
                         Swal.fire({
                             title: "Deleted!",
