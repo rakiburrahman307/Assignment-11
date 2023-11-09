@@ -65,7 +65,7 @@ Job Swift is an online platform dedicated to connecting job seekers with a wide 
 
 ## License
 This project is licensed under the [JobSwift](LICENSE).
-This project live link [https://654bc8786091fc21f3a62152--curious-starburst-d1ee83.netlify.app](LInk).
+This project live link [https://654cb6a7320bb405568374cd--curious-starburst-d1ee83.netlify.app](LInk).
 
 ## Contact
 For questions or feedback, contact:
