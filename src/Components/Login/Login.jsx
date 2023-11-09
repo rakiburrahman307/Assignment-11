@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const Login = () => {
-    const { logInWithGoogle, logInWithEmailAndPassword} = useContext(AuthContext);
+    const { logInWithGoogle, logInWithEmailAndPassword } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const handleLogin = (e) => {
@@ -18,30 +18,30 @@ const Login = () => {
         const password = form.password.value;
 
         logInWithEmailAndPassword(email, password)
-        .then(() => {
-            // Signed in 
+            .then(() => {
+                // Signed in 
                 toast.success('Sign in successful');
                 navigate(location?.state ? location.state : '/');
-            
-            // ...
-          })
-          .catch((error) => {
-            toast.error(error.message);
-          });
+
+                // ...
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
     }
 
 
     const handleLogInWithGoogle = () => {
         logInWithGoogle()
-          .then(() => {
-            toast.success('Sign in successful');
-              navigate(location?.state ? location.state : '/');
-           
-          })
-          .catch((err) => {
-            toast.error(err.message); 
-          });
-      };
+            .then(() => {
+                toast.success('Sign in successful');
+                navigate(location?.state ? location.state : '/');
+
+            })
+            .catch((err) => {
+                toast.error(err.message);
+            });
+    };
     return (
 
         <div>

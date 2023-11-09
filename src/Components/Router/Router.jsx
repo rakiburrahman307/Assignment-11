@@ -13,6 +13,10 @@ import AppliedJobs from "../NavbarRoute/AppliedJobs";
 import PrivateRoute from "./PrivateRoute";
 import DetailsPage from "../Pages/DetailsPage";
 import UpdatePage from "../Pages/updatePage";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
+import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import TermsOfUse from "../Pages/TermsOfUse";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: '/all_jobs',
         element: <AllJobs />,
-        loader: () => fetch('https://assignment-11-server-pi-rouge.vercel.app/all_jobs', { credentials: "include" }),
+        loader: () => fetch('http://localhost:5000/all_jobs', { credentials: "include" }),
       },
       {
         path: '/blogs',
@@ -44,7 +48,6 @@ const router = createBrowserRouter([
       {
         path: '/my_job',
         element: <PrivateRoute><MyJob /></PrivateRoute>,
-        loader: () => fetch('https://assignment-11-server-pi-rouge.vercel.app/all_jobs', { credentials: "include" })
       },
       {
         path: '/profile',
@@ -57,18 +60,33 @@ const router = createBrowserRouter([
       {
         path: '/applied_job',
         element: <PrivateRoute><AppliedJobs /></PrivateRoute>,
-        loader: () => fetch('https://assignment-11-server-pi-rouge.vercel.app/applied_job', { credentials: "include" })
       },
       {
         path: '/all_job/:id',
         element: <PrivateRoute><DetailsPage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${params.id}`, { credentials: "include" })
+        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
       },
       {
         path: 'update/:id',
         element: <PrivateRoute><UpdatePage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${params.id}`, { credentials: "include" })
+        loader: ({ params }) => fetch(`http://localhost:5000/all_jobs/${params.id}`, { credentials: "include" })
 
+      },
+      {
+        path: '/about',
+        element: <About></About>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      },
+      {
+        path: '/privacy',
+        element: <PrivacyPolicy></PrivacyPolicy>
+      },
+      {
+        path: 'terms-of-use',
+        element: <TermsOfUse></TermsOfUse>
       }
     ],
   },

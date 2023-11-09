@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ErrorPage404 = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-500 to-purple-700">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-black to-red-700">
             <div className="text-center text-white p-8">
                 <h1 className="text-5xl font-bold mb-4">404 - Page Not Found</h1>
                 <p className="text-lg mb-8">Oops! Looks like you have ventured into uncharted territory.</p>

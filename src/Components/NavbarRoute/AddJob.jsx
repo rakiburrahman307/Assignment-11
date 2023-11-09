@@ -25,11 +25,10 @@ const AddJob = () => {
         const jobPost = user.email;
         const formatStartDate = startDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
         const formatEndDate = endDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
+        const applicantsNumber = 0;
+        const data = { jobPost, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate, applicantsNumber }
 
-        const data = {jobPost, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate }
-        console.log(jobPost, userName, photoURL, jobTitle, description, salary, category, formatStartDate, formatEndDate)
-
-        axios.post('https://assignment-11-server-pi-rouge.vercel.app/all_jobs', data, { withCredentials: true })
+        axios.post('http://localhost:5000/all_jobs', data, { withCredentials: true })
             .then(() => {
                 toast.success('Job added successfully')
             })
@@ -47,7 +46,7 @@ const AddJob = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="card flex-shrink-0 w-full max-w-full shadow-2xl bg-base-100">
                         <form onSubmit={handleAddJob} className="card-body">
-                            <h1 className="text-3xl font-bold text-center">Add Job</h1>
+                            <h1 className="text-3xl font-bold text-center">Add <span className="text-teal-500">Jobs</span></h1>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <div className="form-control">
                                     <label className="label">
@@ -118,7 +117,7 @@ const AddJob = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Add New Job</button>
+                                <button className="btn btn-outline btn-accent">Add New Job</button>
                             </div>
                         </form>
                     </div>

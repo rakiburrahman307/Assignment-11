@@ -5,6 +5,7 @@ import { AuthContext } from "../AuthProvidors/AuthProvider";
 import { toast } from "react-toastify";
 import axios from "axios";
 import emailjs from 'emailjs-com';
+import { Helmet } from "react-helmet";
 
 const DetailsPage = () => {
     const { user } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const DetailsPage = () => {
     const applyUserEmail = user?.email;
     const email = user?.email;
     const filterData = useLoaderData();
-    const { _id, applicantsNumber, category, description, jobTitle, photoURL, salary, formatEndDate, jobPost } = filterData;
+    const { _id, applicantsNumber, category, description, jobTitle, photoURL, salary, formatEndDate, formatStartDate, jobPost } = filterData;
 
     // EmailJS service ID
     const serviceID = 'service_lp2l0en';
@@ -27,14 +28,14 @@ const DetailsPage = () => {
     const handleApplyJobs = (id) => {
         setId(id);
         const isDeadlineOver = Date.now() > new Date(formatEndDate).getTime();
-        
+
         if (isDeadlineOver) {
             toast.error("Application deadline has passed. You cannot apply.");
             return;
-        }else if (jobPost === user.email) {
+        } else if (jobPost === user.email) {
             alert("Employers cannot apply for their own jobs.");
             return;
-          } else {
+        } else {
             // Open the modal using document.getElementById('ID').showModal() method
             document.getElementById('my_modal_1').showModal();
         }
@@ -46,13 +47,13 @@ const DetailsPage = () => {
 
         const data = { applyUserEmail, description, jobTitle, photoURL, salary, formatEndDate, jobPost, cvLink, category };
 
-        axios.post('https://assignment-11-server-pi-rouge.vercel.app/applied_job', data, { withCredentials: true })
+        axios.post('http://localhost:5000/applied_job', data, { withCredentials: true })
             .then(() => {
                 toast.success('Job Applied successfully');
                 document.getElementById('my_modal_1').close();
-                axios.put(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${id}`, { withCredentials: true })
+                axios.put(`http://localhost:5000/update_count/${id}`, { withCredentials: true })
                     .then(() => {
-                        console.log('Update successfully');
+                        toast.success('Update count success');
                     })
                     .catch(error => {
                         console.error(error.message);
@@ -85,6 +86,10 @@ const DetailsPage = () => {
 
     return (
         <div className="my-10">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Details | JobSwift</title>
+            </Helmet>
             <h2 className="text-4xl font-bold text-center mb-6 mx-2 md:mx-10">
                 Job <span className="text-teal-600">Details</span>
             </h2>
@@ -96,7 +101,8 @@ const DetailsPage = () => {
                     <h2 className="card-title font-bold">Title: {jobTitle}</h2>
                     <h3 className=" text-xl font-semibold">Salary: ${salary}</h3>
                     <h3 className=" text-lg font-semibold">Number of Applicants: {applicantsNumber}</h3>
-                    <h3 className=" text-lg font-semibold">Number of Applicants: {formatEndDate}</h3>
+                    <h3 className=" text-lg font-semibold">Job Posting Date: {formatStartDate}</h3>
+                    <h3 className=" text-lg font-semibold">Application Deadline: {formatEndDate}</h3>
                     <p className="text-justify">
                         <span className="font-bold">Description:</span> {description}
                     </p>
@@ -133,7 +139,7 @@ const DetailsPage = () => {
                                 </label>
                                 <input type="text" name="cv_link" placeholder="Cv Link Here" className="input input-bordered input-sm w-full max-w-24" />
                             </div>
-                            {/* If there is a button in form, it will close the modal */}
+                           
 
                             <button className="btn btn-block btn-sm btn-success mt-5 hover:bg-green-600 hover:text-white ">
                                 Submit

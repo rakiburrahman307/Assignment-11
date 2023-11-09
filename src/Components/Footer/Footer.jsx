@@ -3,23 +3,23 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvidors/AuthProvider";
 
 const Footer = () => {
-    const {darkMode} = useContext(AuthContext);
+    const { darkMode } = useContext(AuthContext);
     return (
         <footer className={`footer p-10 ${darkMode ? 'bg-black' : 'bg-[#007B7F]'}  text-[#DDDDDD]`}>
             <aside>
-            <Link to='/' className="btn btn-ghost normal-case text-xl text-[#DDDDDD] ">JobSwift</Link>                <p>JobsSwift Industries Ltd.<br />Providing the best jobs for you since 2023. <br /> &copy; 2023 JobsSwift. All rights reserved.</p>
+                <Link to='/' className="btn btn-ghost normal-case text-xl text-[#DDDDDD] ">JobSwift</Link>                <p>JobsSwift Industries Ltd.<br />Providing the best jobs for you since 2023. <br /> &copy; 2023 JobsSwift. All rights reserved.</p>
                 <p></p>
             </aside>
 
             <nav>
                 <header className="footer-title">Company</header>
-                <Link className="link link-hover">About us</Link>
-                <Link className="link link-hover">Contact</Link>
+                <Link to='/about' className="link link-hover">About us</Link>
+                <Link to='/contact' className="link link-hover">Contact</Link>
             </nav>
             <nav>
                 <header className="footer-title">Legal</header>
-                <Link className="link link-hover">Terms of use</Link>
-                <Link className="link link-hover">Privacy policy</Link>
+                <Link to='/terms-of-use' className="link link-hover">Terms of use</Link>
+                <Link to='/privacy' className="link link-hover">Privacy policy</Link>
             </nav>
             <nav>
                 <header className="footer-title">Social</header>

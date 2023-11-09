@@ -11,7 +11,7 @@ const UpdatePage = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
-    const {_id, photoURL, jobTitle, salary, }= updateData;
+    const { _id, photoURL, jobTitle, salary, } = updateData;
 
     const handleUpdate = (e) => {
         e.preventDefault();
@@ -22,10 +22,10 @@ const UpdatePage = () => {
         const formatStartDate = startDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
         const formatEndDate = endDate.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', year: 'numeric' });
 
-        const data = {photoURL, jobTitle, salary, formatStartDate, formatEndDate }
-        console.log( photoURL, jobTitle, salary, formatStartDate, formatEndDate)
+        const data = { photoURL, jobTitle, salary, formatStartDate, formatEndDate }
+        console.log(photoURL, jobTitle, salary, formatStartDate, formatEndDate)
 
-        axios.patch( `https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${_id}`, data, { withCredentials: true })
+        axios.patch(`http://localhost:5000/all_jobs/${_id}`, data, { withCredentials: true })
             .then(() => {
                 toast.success('Update successfully')
             })
@@ -43,7 +43,7 @@ const UpdatePage = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="card flex-shrink-0 w-full max-w-full shadow-2xl bg-base-100">
                         <form onSubmit={handleUpdate} className="card-body">
-                            <h1 className="text-3xl font-bold text-center">Add Job</h1>
+                            <h1 className="text-3xl font-bold text-center">Update <span className="text-teal-500">Job</span></h1>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <div className="form-control">
                                     <label className="label">
@@ -57,7 +57,7 @@ const UpdatePage = () => {
                                     </label>
                                     <input type="text" defaultValue={jobTitle} name="title" placeholder="Job Title" className="input input-bordered" required />
                                 </div>
-                                
+
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Salary range</span>
@@ -93,7 +93,7 @@ const UpdatePage = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Add New Job</button>
+                                <button className="btn btn-outline btn-accent">Update Job</button>
                             </div>
                         </form>
                     </div>

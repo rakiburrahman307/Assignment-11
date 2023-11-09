@@ -7,14 +7,14 @@ import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const form = e.target;
-        const name =form.name.value;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         const photoUrl = form.photoUrl.value;
@@ -32,7 +32,7 @@ const SignUp = () => {
                     // update profile name :
                     updateProfile(result.user, {
                         displayName: name,
-                        photoURL:photoUrl
+                        photoURL: photoUrl
                     })
                         .then(() => {
                             toast.success("Create user successfully")
@@ -49,7 +49,7 @@ const SignUp = () => {
 
 
         }
-        
+
     }
 
 

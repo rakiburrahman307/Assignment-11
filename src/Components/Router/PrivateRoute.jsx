@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { AuthContext } from '../AuthProvidors/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
-const PrivateRoute = ({children}) => {
+const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
 
@@ -16,7 +16,7 @@ const PrivateRoute = ({children}) => {
     else {
         return <Navigate state={location.pathname} to='/login'></Navigate>
     }
-   
+
 };
 
 PrivateRoute.propTypes = {

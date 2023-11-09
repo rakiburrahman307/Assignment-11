@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import './style.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Marquee from "react-fast-marquee";
 
 const HomeTab = () => {
   const [type, setType] = useState([]);
@@ -17,7 +18,7 @@ const HomeTab = () => {
   }, []);
 
   const handleFilter = (category) => {
-    axios.get(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs`, { withCredentials: true })
+    axios.get(`http://localhost:5000/all_jobs`, { withCredentials: true })
       .then(res => {
         const filter = res?.data?.filter(jobs => jobs.category.toLowerCase() === category.toLowerCase());
         setFilterData(filter);
@@ -29,6 +30,11 @@ const HomeTab = () => {
   return (
     <div className='mb-10'>
       <h2 className='text-5xl font-extrabold my-8 text-center'>Available Our <span className='text-teal-500'>Jobs</span></h2>
+      <div>
+        <Marquee className='mb-5'>
+          <h2 className='text-red-500'>Using the react tab component please click the category to load all related jobs data</h2>
+        </Marquee>
+      </div>
       <Tabs>
         <TabList>
           {type.map((tab) => (

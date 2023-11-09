@@ -1,15 +1,17 @@
 const Banner = () => {
     const textField = (
-        <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
-            <div className="w-1/2 text-white pl-10 space-y-8">
-                <h2 className="text-6xl font-bold">Unlock Your Career Potential with JobSwift</h2>
-                <p>
-                    Explore a world of opportunities and take the next step in your professional journey with JobSwift Industries Ltd.
-                    We are dedicated to connecting talented individuals with rewarding careers. Your dream job awaits!
-                </p>
-                <div className="flex">
-                    <input type="text" placeholder="Type here" className="input input-bordered input-md w-48 max-w-md text-black rounded-none rounded-s-lg" />
-                    <button className="btn btn-outline btn-warning rounded-e-full">Search</button>
+        <div>
+            <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
+                <div className="w-1/2 text-white pl-10 space-y-8" data-aos="zoom-in-left">
+                    <h2 className="text-6xl font-bold">Unlock Your Career Potential with JobSwift</h2>
+                    <p>
+                        Explore a world of opportunities and take the next step in your professional journey with JobSwift Industries Ltd.
+                        We are dedicated to connecting talented individuals with rewarding careers. Your dream job awaits!
+                    </p>
+                    <div className="flex" data-aos="flip-left">
+                        <input type="text" placeholder="Type here" className="input input-bordered input-md w-48 max-w-md text-black rounded-none rounded-s-lg" />
+                        <button className="btn btn-outline btn-warning rounded-e-full">Search</button>
+                    </div>
                 </div>
             </div>
         </div>

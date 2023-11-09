@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 
 
 const BlogPage = () => {
@@ -17,11 +18,16 @@ const BlogPage = () => {
       title: 'Explaining Code in Your Project',
       content: 'When it comes to explaining code, clarity and documentation are key...',
     },
-    // Add more blog posts as needed
+
   ];
 
   return (
+
     <div className="bg-gray-100 min-h-screen p-8">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Blogs | JobSwift</title>
+      </Helmet>
       <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">Welcome to the Blog Page</h1>
         <div className="space-y-8">

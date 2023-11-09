@@ -1,10 +1,15 @@
 
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 const AppliedJobsRow = ({ job }) => {
     const { jobTitle, salary, formatEndDate, cvLink, category, applyUserEmail } = job;
     return (
-        <tr className="hover">
+        <motion.tr
+            whileHover={{ scale: 1.05, backgroundColor: "#f2f2f2" }}
+            whileTap={{ scale: 0.95 }}
+            className="hover:bg-gray-100 cursor-pointer"
+        >
             <td>{jobTitle}</td>
             <td>{category}</td>
             <td>{applyUserEmail}</td>
@@ -12,7 +17,7 @@ const AppliedJobsRow = ({ job }) => {
             <td>{formatEndDate}</td>
             <td>{cvLink}</td>
             <td></td>
-        </tr>
+        </motion.tr>
     );
 };
 

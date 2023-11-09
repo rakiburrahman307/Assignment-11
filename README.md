@@ -1,7 +1,7 @@
-# Ethereal Autos Website
+# Job Swift Website
 
 ## Description
-Ethereal Autos is not just a car dealership. it's an experience curated for automotive enthusiasts who appreciate the artistry of exceptional vehicles. At Ethereal Autos, we redefine the way you buy and sell cars by blending cutting-edge technology with a passion for automobiles.
+Job Swift is an online platform dedicated to connecting job seekers with a wide range of employment opportunities. Whether you're a seasoned professional looking for your next career move or a recent graduate eager to kickstart your professional journey, Job Swift has something for everyone.
 
 ## Table of Contents
 - [Features](#features)
@@ -19,9 +19,17 @@ Ethereal Autos is not just a car dealership. it's an experience curated for auto
 - Add JobsPage
 - Applied jobs Page
 - My Jobs Page
+- Profile Page
+- LogIn Page
+- Registration Page
+- About Page
+- Contact Page
+- Privacy policy Page
+- Terms of Use  Page
 - User authentication for personalized experience
 - User registration for personalized experience
 - Responsive design for various devices
+- Implementation the Dark theme on the Home pages
 
 ## Technologies Used
 - React.js
@@ -35,6 +43,9 @@ Ethereal Autos is not just a car dealership. it's an experience curated for auto
 - EmailJs
 - React Pdf
 - React toasty
+- Framer Motion
+- React Marquee
+- React Helmet
 
 
 ## Installation
@@ -54,7 +65,7 @@ Ethereal Autos is not just a car dealership. it's an experience curated for auto
 
 ## License
 This project is licensed under the [JobSwift](LICENSE).
-This project live link [https://6533dbc842df062c581574d2--cool-gecko-ec8121.netlify.app/](LInk).
+This project live link [https://654bc8786091fc21f3a62152--curious-starburst-d1ee83.netlify.app](LInk).
 
 ## Contact
 For questions or feedback, contact:
