@@ -1,18 +1,22 @@
 [
     {
         "id": 1,
-        "type": "onSiteJob"
+        "type": "allJobs"
     },
     {
         "id": 2,
-        "type": "remoteJob"
+        "type": "onSiteJob"
     },
     {
         "id": 3,
-        "type": "hybrid"
+        "type": "remoteJob"
     },
     {
         "id": 4,
+        "type": "hybrid"
+    },
+    {
+        "id": 5,
         "type": "partTimeJob"
     }
 ]
