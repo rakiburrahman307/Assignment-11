@@ -1,13 +1,21 @@
 
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const FutureCard = ({ data }) => {
   const { photoURL, jobTitle, description, category } = data;
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
   return (
     <div className="card w-auto bg-base-100 shadow-xl transition-transform transform hover:scale-105">
       <figure>
-        <img src={photoURL} alt="Shoes" />
+        <img className={`${ isLoaded ? 'blur-0' : 'blur-md'} h-52`}
+        loading="lazy"
+        onLoad={handleImageLoad}
+        src={photoURL} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{jobTitle}</h2>

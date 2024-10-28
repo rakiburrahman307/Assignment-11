@@ -1,15 +1,21 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../NavBar/Navbar";
-import Footer from "../Footer/Footer";
+import { lazy, Suspense } from "react";
+import Spinner from "../Spinner/Spinner";
+const Navbar = lazy(() => import("../NavBar/Navbar"));
+const Footer = lazy(() => import("../Footer/Footer"));
+const Outlet = lazy(() =>
+  import("react-router-dom").then((module) => ({ default: module.Outlet }))
+);
 
 const Root = () => {
-    return (
-        <div>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      <Suspense fallback={<Spinner />}>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </Suspense>
+    </div>
+  );
 };
 
 export default Root;

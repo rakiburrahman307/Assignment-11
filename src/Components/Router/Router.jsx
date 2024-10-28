@@ -1,27 +1,30 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Root/Root";
-import Home from "../Home/Home";
-import Login from "../Login/Login";
-import AllJobs from "../NavbarRoute/AllJobs";
-import Blogs from "../NavbarRoute/Blogs";
 import ErrorPage404 from "../ErrorPage404/ErrorPage404";
-import SignUp from "../SignUpPage/SignUp";
-import MyJob from "../NavbarRoute/MyJob";
-import Profile from "../NavbarRoute/Profile";
-import AddJob from "../NavbarRoute/AddJob";
-import AppliedJobs from "../NavbarRoute/AppliedJobs";
 import PrivateRoute from "./PrivateRoute";
-import DetailsPage from "../Pages/DetailsPage";
-import UpdatePage from "../Pages/updatePage";
-import About from "../Pages/About";
-import Contact from "../Pages/Contact";
-import PrivacyPolicy from "../Pages/PrivacyPolicy";
-import TermsOfUse from "../Pages/TermsOfUse";
+import { lazy } from "react";
+
+// Lazy load components
+const Home = lazy(() => import("../Home/Home"));
+const Login = lazy(() => import("../Login/Login"));
+const AllJobs = lazy(() => import("../NavbarRoute/AllJobs"));
+const Blogs = lazy(() => import("../NavbarRoute/Blogs"));
+const SignUp = lazy(() => import("../SignUpPage/SignUp"));
+const MyJob = lazy(() => import("../NavbarRoute/MyJob"));
+const Profile = lazy(() => import("../NavbarRoute/Profile"));
+const AddJob = lazy(() => import("../NavbarRoute/AddJob"));
+const AppliedJobs = lazy(() => import("../NavbarRoute/AppliedJobs"));
+const DetailsPage = lazy(() => import("../Pages/DetailsPage"));
+const UpdatePage = lazy(() => import("../Pages/UpdatePage"));
+const About = lazy(() => import("../Pages/About"));
+const Contact = lazy(() => import("../Pages/Contact"));
+const PrivacyPolicy = lazy(() => import("../Pages/PrivacyPolicy"));
+const TermsOfUse = lazy(() => import("../Pages/TermsOfUse"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: <Root />,
     errorElement: <ErrorPage404 />,
     children: [
       {
@@ -43,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/signup',
-        element: <SignUp></SignUp>
+        element: <SignUp />
       },
       {
         path: '/my_job',
@@ -70,23 +73,22 @@ const router = createBrowserRouter([
         path: 'update/:id',
         element: <PrivateRoute><UpdatePage /></PrivateRoute>,
         loader: ({ params }) => fetch(`https://assignment-11-server-pi-rouge.vercel.app/all_jobs/${params.id}`, { credentials: "include" })
-
       },
       {
         path: '/about',
-        element: <About></About>
+        element: <About />
       },
       {
         path: '/contact',
-        element: <Contact></Contact>
+        element: <Contact />
       },
       {
         path: '/privacy',
-        element: <PrivacyPolicy></PrivacyPolicy>
+        element: <PrivacyPolicy />
       },
       {
         path: 'terms-of-use',
-        element: <TermsOfUse></TermsOfUse>
+        element: <TermsOfUse />
       }
     ],
   },
