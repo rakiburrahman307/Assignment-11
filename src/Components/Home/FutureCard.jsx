@@ -10,7 +10,10 @@ const FutureCard = ({ data }) => {
     setIsLoaded(true);
   };
   return (
-    <div className="card w-auto bg-base-100 shadow-xl transition-transform transform hover:scale-105">
+    <div
+    data-aos='fade-up'
+    data-aos-duration='2000'
+    className="card w-auto bg-base-100 shadow-xl transition-transform transform hover:scale-105">
       <figure>
         <img className={`${ isLoaded ? 'blur-0' : 'blur-md'} h-52`}
         loading="lazy"
